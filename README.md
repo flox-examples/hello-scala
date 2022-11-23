@@ -1,3 +1,14 @@
+## flox usage
+
+Run `flox build` in the root of the project
+
+...next, run 
+```
+java -jar result/scala-3.2.1/hello-scala-assembly-0.1.0-SNAPSHOT.jar
+Hello world!
+I was compiled by Scala 3. :)
+```
+
 ## sbt project compiled with Scala 3
 
 ### Usage
