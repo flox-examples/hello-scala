@@ -5,7 +5,7 @@
 
   # Declaration of external resources
   # =================================
-
+   inputs.sbt.url = "github:zaninime/sbt-derivation";
   # =================================
 
   outputs = args @ {floxpkgs, ...}: floxpkgs.project args (_: {});
