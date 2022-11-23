@@ -1,8 +1,11 @@
 ## flox usage
 
-Run `flox build` in the root of the project
+First, run `flox build` in the root of the project to obtain a development environment
 
-...next, run 
+
+Next, run `flox build` in the root of the project to build an "uberjar"
+
+...finally, , run 
 ```
 java -jar result/scala-3.2.1/hello-scala-assembly-0.1.0-SNAPSHOT.jar
 Hello world!

@@ -1,5 +1,5 @@
 # Replace "stdenv" with the namespace or name of your language's builder
-{ self, inputs, pkgs, sbt, jre, lib }:
+{ self, inputs, pkgs, sbt, jre, lib, openjdk, scalafmt }:
 
 inputs.sbt.lib.mkSbtDerivation {
   inherit pkgs;
@@ -15,4 +15,5 @@ inputs.sbt.lib.mkSbtDerivation {
     mkdir -p $out
     cp -a target/* -t $out
   '';
+  propagatedBuildInputs = [ openjdk sbt scalafmt ];
 }
