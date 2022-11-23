@@ -1,10 +1,18 @@
 # Replace "stdenv" with the namespace or name of your language's builder
-{ inputs, pkgs }:
+{ self, inputs, pkgs, sbt, jre, lib }:
 
 inputs.sbt.lib.mkSbtDerivation {
   inherit pkgs;
   pname = "hello-scala";
   version = "0.0.0";
-  src = ../..; # + "/src";
-  depsSha256 = "sha256-ghEB1ARA7w8yocIQoPUphVYhD6yxdY1LonVdR+G8swg=";
+  src = self; # + "/src";
+  depsSha256 = "sha256-RQvxbSN0QiQ0HLKx9fnk3qTgHJSLn7GS7Tu/A4NcEq4=";
+  #depsSha256 = lib.fakeSha256;
+  buildPhase = ''
+    sbt assembly
+  '';
+  installPhase = ''
+    mkdir -p $out
+    cp -a target/* -t $out
+  '';
 }
