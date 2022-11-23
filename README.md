@@ -1,6 +1,6 @@
 ## flox usage
 
-First, run `flox build` in the root of the project to obtain a development environment
+First, run `flox develop` in the root of the project to obtain a development environment
 
 
 Next, run `flox build` in the root of the project to build an "uberjar"
